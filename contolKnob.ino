@@ -201,7 +201,7 @@ void reconnect() {
     String clientId = "imaknob";
     clientId += String(random(0xff), HEX);
     // Attempt to connect
-    if (client.connect(clientId, mqtt_usr, mqtt_psw)) {
+    if (client.connect(clientId.c_str, mqtt_usr, mqtt_psw)) {
       Serial.println("connected");
       fill_solid(leds, NUM_LEDS, CRGB::Green);  FastLED.show();
       delay(2000);
